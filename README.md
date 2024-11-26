@@ -1,5 +1,6 @@
 ![SCREENGITHUB](https://github.com/user-attachments/assets/7b603180-033e-41be-8d67-82db0c4d7de7)
 # personal-earbud-script
+    usage: gui: python3 combine.py cli: ./combine.sh disconnect/connect/sync
 a set of utilities to sync, connect and disconnect ANY airbuds
 
 this utilities consist on:
@@ -27,7 +28,7 @@ thanks for reading lad!
 
 
 
-(PS: ONLY WORKS WITH PULSEAUDIO, BUT YOU CAN SET IT FOR PIPEWIRE ENTERING THE FOLLOWING COMMAND ON THE CORRESPONDING SECTION OF THE SCRIPT):
+(PS: THE SYNC UNSYNCED EARBUDS FEATURE ONLY WORKS WITH PULSEAUDIO, BUT YOU CAN SET IT FOR PIPEWIRE ENTERING THE FOLLOWING COMMAND ON THE CORRESPONDING SECTION OF THE SCRIPT):
 
     pw-cli create-node audio.mixers.combine-sink
 
