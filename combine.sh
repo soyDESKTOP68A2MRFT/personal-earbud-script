@@ -24,8 +24,8 @@ connect_audifonos() {
   # Reemplaza con la lógica para sincronizar los audífonos
   echo "Intentando sincronizar los audífonos..."
   # Aquí agregas los comandos específicos de sincronización, por ejemplo:
-  bluetoothctl connect 41:42:B0:38:00:23
-  bluetoothctl connect 41:42:6C:C2:F6:4A
+  bluetoothctl connect <YOURMAC>
+  bluetoothctl connect <YOURMAC>
 
   # Verificar si la sincronización fue exitosa
   if [ $? -eq 0 ]; then
@@ -41,8 +41,8 @@ connect_audifonos() {
 disconnect_audifonos() {
   # Reemplaza con la lógica para desconectar los audífonos
   echo "Intentando desconectar los audífonos..."
-  bluetoothctl disconnect 41:42:B0:38:00:23
-  bluetoothctl disconnect 41:42:6C:C2:F6:4A
+  bluetoothctl disconnect <YOURMAC>
+  bluetoothctl disconnect <YOURMAC>
 
   # Verificar si la desconexión fue exitosa
   if [ $? -eq 0 ]; then
