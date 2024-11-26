@@ -10,7 +10,7 @@ fi
 sync_audifonos() {
   echo "Sincronizando los audífonos..."
   # El comando pactl para sincronizar los dos audífonos
-  pactl load-module module-combine-sink slaves=bluez_sink.41_42_B0_38_00_23.a2dp_sink,bluez_sink.41_42_6C_C2_F6_4A.a2dp_sink
+  pactl load-module module-combine-sink slaves=bluez_sink.<YOURMAC>.a2dp_sink,bluez_sink.<YOURMAC>.a2dp_sink
   if [ $? -eq 0 ]; then
     echo "Audífonos sincronizados con éxito."
   else
