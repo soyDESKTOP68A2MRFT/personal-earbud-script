@@ -1,6 +1,7 @@
 ![SCREENGITHUB](https://github.com/user-attachments/assets/7b603180-033e-41be-8d67-82db0c4d7de7)
 # personal-earbud-script
-    usage: gui: python3 combine.py cli: ./combine.sh disconnect/connect/sync
+    usage-gui: python3 combine.py 
+    usage-cli: ./combine.sh disconnect/connect/sync
 a set of utilities to sync, connect and disconnect ANY airbuds
 
 this utilities consist on:
