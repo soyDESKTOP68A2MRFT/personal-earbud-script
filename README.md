@@ -1,3 +1,4 @@
+![SCREENGITHUB](https://github.com/user-attachments/assets/7b603180-033e-41be-8d67-82db0c4d7de7)
 # personal-earbud-script
 a set of utilities to sync, connect and disconnect ANY airbuds
 
