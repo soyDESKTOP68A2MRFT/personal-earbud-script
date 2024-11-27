@@ -2,15 +2,14 @@
 
 # Verificar que se haya pasado un argumento
 if [ -z "$1" ]; then
-  echo "Error: No se especificó una acción. Usa 'connect' para conectar, 'sync' para sincronizar o 'disconnect' para desconectar."
+  echo "Error: No se especificó una acción. Usa 'connect', 'sync', 'unsync' o 'disconnect'."
   exit 1
 fi
 
 # Función para sincronizar audífonos
 sync_audifonos() {
   echo "Sincronizando los audífonos..."
-  # El comando pactl para sincronizar los dos audífonos
-  pactl load-module module-combine-sink slaves=bluez_sink.<YOURMAC>.a2dp_sink,bluez_sink.<YOURMAC>.a2dp_sink
+  pactl load-module module-combine-sink slaves=bluez_sink.41_42_B0_38_00_23.a2dp_sink,bluez_sink.41_42_6C_C2_F6_4A.a2dp_sink
   if [ $? -eq 0 ]; then
     echo "Audífonos sincronizados con éxito."
   else
@@ -21,35 +20,38 @@ sync_audifonos() {
 
 # Función para conectar audífonos
 connect_audifonos() {
-  # Reemplaza con la lógica para sincronizar los audífonos
-  echo "Intentando sincronizar los audífonos..."
-  # Aquí agregas los comandos específicos de sincronización, por ejemplo:
-  bluetoothctl connect <YOURMAC>
-  bluetoothctl connect <YOURMAC>
-
-  # Verificar si la sincronización fue exitosa
+  echo "Intentando conectar los audífonos..."
+  bluetoothctl connect 41:42:B0:38:00:23
+  bluetoothctl connect 41:42:6C:C2:F6:4A
   if [ $? -eq 0 ]; then
-    echo "Audífonos sincronizados con éxito."
-    exit 0
+    echo "Audífonos conectados con éxito."
   else
-    echo "Error al sincronizar los audífonos."
+    echo "Error al conectar los audífonos."
     exit 1
   fi
 }
 
 # Función para desconectar audífonos
 disconnect_audifonos() {
-  # Reemplaza con la lógica para desconectar los audífonos
   echo "Intentando desconectar los audífonos..."
-  bluetoothctl disconnect <YOURMAC>
-  bluetoothctl disconnect <YOURMAC>
-
-  # Verificar si la desconexión fue exitosa
+  bluetoothctl disconnect 41:42:B0:38:00:23
+  bluetoothctl disconnect 41:42:6C:C2:F6:4A
   if [ $? -eq 0 ]; then
     echo "Audífonos desconectados con éxito."
-    exit 0
   else
     echo "Error al desconectar los audífonos."
+    exit 1
+  fi
+}
+
+# Función para desincronizar audífonos
+unsync_audifonos() {
+  echo "Desincronizando los audífonos..."
+  pactl unload-module module-combine-sink
+  if [ $? -eq 0 ]; then
+    echo "Audífonos desincronizados con éxito."
+  else
+    echo "Error al desincronizar los audífonos."
     exit 1
   fi
 }
@@ -65,8 +67,11 @@ case "$1" in
   disconnect)
     disconnect_audifonos
     ;;
+  unsync)
+    unsync_audifonos
+    ;;
   *)
-    echo "Error: Acción no reconocida. Usa 'sync' para sincronizar o 'connect' para conectar, y 'disconnect' para desconectar."
+    echo "Error: Acción no reconocida. Usa 'sync', 'connect', 'unsync' o 'disconnect'."
     exit 1
     ;;
 esac
