@@ -1,8 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Name=Combinar la entrada de los audifonos bluetooth
-Categories=System
-Exec=sh -c 'python3 /home/joni/combine.py'
-Icon=audio-headphones
-
