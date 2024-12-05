@@ -1,0 +1,42 @@
+<interface>
+  <object class="GtkWindow" id="main_window">
+    <property name="title">Gestor de Audífonos</property>
+     <property name="default_width">350</property>
+     <property name="default_height">100</property>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="message_label">
+            <property name="label">Estado: Listo</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="sync_button">
+            <property name="label">Sincronizar Audífonos</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="connect_button">
+            <property name="label">Conectar Audífonos</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="disconnect_button">
+            <property name="label">Desconectar Audífonos</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="unsync_button">
+            <property name="label">Desincronizar Audífonos</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="fix_button">
+            <property name="label">Arreglar Audífonos</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
